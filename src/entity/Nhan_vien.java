@@ -1,21 +1,31 @@
 package entity;
 
 public class Nhan_vien {
-	private String id_nhan_vien, ten_nhan_vien, dia_chi, id_quan;
+	private String id_nhan_vien, ten_nhan_vien, dia_chi, id_quan, gioi_tinh;
 	// id_quan: FK
-	private int tuoi, sdt;
+	private int sdt, tuoi;
+
 	private double luong;
 	
-	public Nhan_vien(String id_nhan_vien, String ten_nhan_vien, String dia_chi,  int tuoi, int sdt,
+	public Nhan_vien(String id_nhan_vien, String ten_nhan_vien, int tuoi, String gioi_tinh, String dia_chi, int sdt,
 			double luong, String id_quan) {
 		super();
 		this.id_nhan_vien = id_nhan_vien;
 		this.ten_nhan_vien = ten_nhan_vien;
-		this.dia_chi = dia_chi;
 		this.tuoi = tuoi;
+		this.gioi_tinh = gioi_tinh;
+		this.dia_chi = dia_chi;
 		this.sdt = sdt;
 		this.luong = luong;
 		this.id_quan = id_quan;
+	}
+	
+	public String getGioi_tinh() {
+		return gioi_tinh;
+	}
+	
+	public void setGioi_tinh(String gioi_tinh) {
+		this.gioi_tinh = gioi_tinh;
 	}
 
 	public String getId_nhan_vien() {

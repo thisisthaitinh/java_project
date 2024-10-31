@@ -1,8 +1,8 @@
 package DAO;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.List;
 import entity.*;
 
 public class Quan_cafe_DAO {
@@ -21,31 +21,4 @@ public class Quan_cafe_DAO {
 			stmt.executeUpdate();
 		}
 	}
-	
-	// them nhan vien
-	public void them_NhanVien(Nhan_vien nv) throws SQLException {
-		String sql = "INSERT INTO NHAN_VIEN (ID_NHAN_VIEN, TEN_NHAN_VIEN, TUOI, DIA_CHI, SDT, LUONG, ID_QUAN) VALUES (?, ?, ?, ?, ?, ?, ?)";
-		try (PreparedStatement stmt = c.prepareStatement(sql)) {
-			stmt.setString(1, nv.getId_nhan_vien());
-			stmt.setString(2, nv.getTen_nhan_vien());
-			stmt.setInt(3, nv.getTuoi());
-			stmt.setString(4, nv.getDia_chi());
-			stmt.setInt(5, nv.getSdt());
-			stmt.setDouble(6, nv.getLuong());
-			stmt.setString(7, nv.getId_quan());
-			
-			stmt.executeUpdate();
-		}
-	}
-	
-	// xoa nhan vien
-	public void xoa_NhanVien(String id_nv) throws SQLException {
-		String sql = "DELETE FROM NHAN_VIEN WHERE ID_NHAN_VIEN = ?";
-		try (PreparedStatement stmt = c.prepareStatement(sql)) {
-			stmt.setString(1, id_nv);
-			stmt.executeUpdate();
-		}
-	}
-	
-	// 
 }
